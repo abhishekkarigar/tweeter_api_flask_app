@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button{
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+   <
+    div{
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#gettweets").click(function(){
+      $.get('gettweets',function(data,status){
+        console.log("DATA: "+data)
+        $("#tweets").append(data)
+      })
+  }),
+  $("#search").click(function(){
+    var hashtag_data = $("#hashtag").val()
+    alert(hashtag_data)
+    $.post('searchfromtwitter',{ mydata : hashtag_data }, function(data, status ,jqXHR){
+	  $("#result").text("Data: " + data +"\nStatus: " + status)
+    });
+  });
+});
+
+
+</script>
+</head>
+<body>
+    <input type="text" name="hashtag" id="hashtag" placeholder="#tag..."/>
+    <button id="search" name="search">search for hashtag</button>
+    <button id="gettweets" name="gettweets">gettweets</button>
+    <p id="result"> </p>
+    <div id="tweets"></div>
+</body>
+</html>
