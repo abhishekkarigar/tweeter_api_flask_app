@@ -4,7 +4,7 @@
 <li> kafka installed </li>
 <li> python 3.x <li>  
   
-## steps
+# steps
 
 <li> copy the kafka folder to any location in the drive ex: C:\kafka\kafka_2.x\  
      start the zookeeper service  and kafka service  
