@@ -2,7 +2,7 @@
 ### Requirements
 <li> windows </li>
 <li> kafka installed </li>
-<li> python 3.x <li>  
+<li> python 3.x </li>  
   
 # steps
 
